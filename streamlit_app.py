@@ -16,17 +16,17 @@ st.markdown("##  Enter your flight details below")
 col1, col2 = st.columns(2)
 
 with col1:
-    source = st.selectbox("🛫 Source", ["Delhi", "Mumbai", "Kolkata", "Chennai", "Banglore"])
-    stops = st.selectbox("🛑 Stops", ["0 stop", "1 stop", "2 stops", "3 stops"])
-    date = st.date_input("📅 Journey Date")
+    source = st.selectbox(" Source", ["Delhi", "Mumbai", "Kolkata", "Chennai", "Banglore"])
+    stops = st.selectbox(" Stops", ["0 stop", "1 stop", "2 stops", "3 stops"])
+    date = st.date_input(" Journey Date")
 
 with col2:
-    dest = st.selectbox("🛬 Destination", ["Cochin", "Delhi", "Banglore", "Hyderabad", "Kolkata", "New Delhi"])
-    airline = st.selectbox("✈️ Airline", [
+    dest = st.selectbox(" Destination", ["Cochin", "Delhi", "Banglore", "Hyderabad", "Kolkata", "New Delhi"])
+    airline = st.selectbox(" Airline", [
         "IndiGo", "Air India", "SpiceJet", "GoAir", "Vistara", "Jet Airways", "Air Asia"
     ])
 
-if st.button("🔮 Predict Price"):
+if st.button(" Predict Price"):
     formatted_date = date.strftime("%d %B %Y")
 
     input_df = prepare_simple_input(
@@ -39,4 +39,4 @@ if st.button("🔮 Predict Price"):
     )
 
     price = model.predict(input_df)[0]
-    st.success(f"💸 Estimated Flight Price: ₹{round(price, 2)}")
+    st.success(f" Estimated Flight Price: Rs{round(price, 2)}")
